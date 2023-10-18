@@ -39,7 +39,7 @@ def call_history(method: Callable) -> Callable:
 
 
 def replay(fn: Callable) -> None:
-    '''Displays the call history of a Cache class' method
+    '''Displays the call history of a Cache class' method.
     '''
     if fn is None or not hasattr(fn, '__self__'):
         return
@@ -81,10 +81,9 @@ class Cache:
         self._redis.set(data_key, data)
         return data_key
 
-
     def get(
             self,
-            key:str,
+            key: str,
             fn: Callable = None,
             ) -> Union[str, bytes, int, float]:
         '''Retrieves a value from a Redis data storage.
